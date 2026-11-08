@@ -85,6 +85,7 @@ section{padding:100px 0;position:relative}
 .field label{display:block;font-size:.8rem;color:var(--gold);margin-bottom:8px}
 .field input,.field select,.field textarea{width:100%;background:var(--ink);border:1px solid rgba(255,255,255,.1);color:var(--ivory);padding:14px;font:inherit}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+.form-msg{margin-top:15px;font-size:.95rem;text-align:center;color:var(--gold-l);font-weight:500;min-height:1.5em}
 
 footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;font-size:.85rem;color:var(--muted);text-align:center}
 
@@ -186,7 +187,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- Contact Section (Formspree 연동 완료) -->
+  <!-- Contact Section (팝업 알림 적용) -->
   <section class="contact" id="contact">
     <div class="container">
       <div>
@@ -197,7 +198,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
         <p><strong>위치:</strong> 세종특별자치시 조치원읍 충현로149  1층</p>
       </div>
       <div class="form">
-        <form action="https://formspree.io/f/mjyydzqn" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/mjyydzqn" method="POST">
           <div class="field">
             <label for="name">성함 / 닉네임</label>
             <input type="text" id="name" name="name" required placeholder="홍길동">
@@ -219,7 +220,8 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
             <label for="message">상담 내용 (요약)</label>
             <textarea id="message" name="message" rows="4" placeholder="상담받으실 내용을 간략히 적어주세요."></textarea>
           </div>
-          <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">무료 상담 신청하기</button>
+          <button type="submit" id="submitBtn" class="btn btn-gold" style="width: 100%; justify-content: center;">무료 상담 신청하기</button>
+          <div id="formMsg" class="form-msg"></div>
         </form>
       </div>
     </div>
@@ -267,6 +269,6 @@ form.addEventListener('submit', async function(e) {
   }
 });
 </script>
-  
+
 </body>
 </html>
