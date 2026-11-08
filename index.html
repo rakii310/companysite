@@ -194,11 +194,12 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
         <p class="eyebrow">24 Hours Free Consultation</p>
         <h2>망설이지 말고<br><span class="gold">상담받아 보세요.</span></h2>
         <p style="color:var(--muted); margin-bottom: 30px;">최초 1시간은 무료로 상담이 진행됩니다. 모든 비밀은 철저히 보장됩니다.</p>
-        <p><strong>비상 직통 전화:</strong> 010-6461-2460 / 070-4001-5113  </p>
-        <p><strong>위치:</strong> 세종특별자치시 조치원읍 충현로149 1층</p>
+        <p><strong>비상 직통 전화:</strong> 010-6461-2460</p>
+        <p><strong>위치:</strong> 세종특별자치시 조치원읍</p>
       </div>
       <div class="form">
-        <form id="contactForm" action="https://formspree.io/f/mjyydzqn" method="POST" target="hiddenFrame">
+        <!-- 새로운 Formspree 주소 적용 및 페이지 이동 방지 설정 -->
+        <form id="contactForm" action="https://formspree.io/f/mnppyyrl" method="POST" target="hiddenFrame">
           <div class="field">
             <label for="name">성함 / 닉네임</label>
             <input type="text" id="name" name="name" required placeholder="홍길동">
@@ -240,7 +241,7 @@ const form = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
 
 form.addEventListener('submit', function() {
-  // 버튼을 누르는 즉시 페이지 이동 없이 안내 문구 출력 및 입력창 초기화
+  // 버튼 클릭 시 페이지 이동 없이 즉시 접수 완료 메시지 출력 및 입력창 초기화
   setTimeout(function() {
     formMsg.textContent = '✨ 상담 신청이 성공적으로 접수되었습니다. 확인 후 빠르게 연락드리겠습니다!';
     form.reset();
