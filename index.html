@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>눈썰미 탐정사무소 | 보이지 않는 것도, 찾아냅니다 — 세종 합법 조사 전문</title>
-<meta name="description" content="기자 출신 대표 탐정 한지연의 눈썰미 탐정사무소. 합법적 증거수집, 실시간 진행 공유, 철저한 비밀보장. 최초 1시간 무료 상담. 세종특별자치시 조치원읍.">
+<meta name="description" content="대표 탐정 한지연의 눈썰미 탐정사무소. 합법적 증거수집, 실시간 진행 공유, 철저한 비밀보장. 최초 1시간 무료 상담. 세종특별자치시 조치원읍.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
@@ -54,6 +54,20 @@ section{padding:100px 0;position:relative}
 .hero-sub strong{color:var(--ivory);display:block;margin-top:.4rem;font-weight:500}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem}
 
+/* About / Profile Section */
+.about{background:var(--charcoal)}
+.about .container{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center}
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.profile-img-box{background:var(--card);border:1px solid var(--line);padding:12px;border-radius:4px;text-align:center}
+.profile-img-box img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px}
+.profile-img-box span{display:block;margin-top:10px;font-size:.85rem;color:var(--gold)}
+.about-text h3{font-size:1.8rem;margin-bottom:1rem;color:var(--ivory)}
+.about-text p{color:var(--muted);margin-bottom:1.5rem;font-size:1rem}
+.badge-list{list-style:none;margin-top:20px}
+.badge-list li{padding:8px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:.95rem}
+.badge-list li span:first-child{color:var(--muted)}
+.badge-list li span:last-child{color:var(--gold-l);font-weight:500}
+
 /* Cards & Feature Images */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .feature-card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .5s var(--ease),border-color .3s}
@@ -64,7 +78,7 @@ section{padding:100px 0;position:relative}
 .feature-card p{color:var(--muted);font-size:.9rem}
 
 /* Contact Form */
-.contact{background:var(--charcoal)}
+.contact{background:var(--ink)}
 .contact .container{display:grid;grid-template-columns:1fr 1.1fr;gap:70px}
 .form{background:var(--card);padding:40px;border:1px solid var(--line)}
 .field{margin-bottom:20px}
@@ -75,7 +89,7 @@ section{padding:100px 0;position:relative}
 footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;font-size:.85rem;color:var(--muted);text-align:center}
 
 @media (max-width:980px){
-  .hero .container,.contact .container,.grid-3{grid-template-columns:1fr}
+  .hero .container,.about .container,.contact .container,.grid-3{grid-template-columns:1fr}
   .nav-links{display:none}
 }
 </style>
@@ -87,8 +101,8 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
   <div class="container">
     <a href="#hero" class="logo"><span class="logo-mark"><span>眼</span></span>눈썰미 탐정사무소</a>
     <ul class="nav-links">
-      <li><a href="#about">대표 탐정</a></li>
-      <li><a href="#pillars">핵심 원칙</a></li>
+      <li><a href="#about">대표 소개</a></li>
+      <li><a href="#pillars">핵심 강점</a></li>
       <li><a href="#contact">상담 문의</a></li>
     </ul>
     <a href="#contact" class="btn btn-gold">1시간 무료 상담</a>
@@ -112,6 +126,33 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
+  <!-- 대표 탐정 소개 및 자격증 섹션 -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="profile-grid">
+        <div class="profile-img-box">
+          <img src="profile.jpg" alt="한지연 대표 탐정">
+          <span>대표 탐정 한지연</span>
+        </div>
+        <div class="profile-img-box">
+          <img src="licence.jpg" alt="탐정사 1급 자격증">
+          <span>탐정사 1급 자격증</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">Certified Investigator</p>
+        <h3>신뢰할 수 있는 공인된 전문 조사 역량</h3>
+        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호하고, 명확하고 신속한 증거 수집으로 진실을 밝혀드립니다.</p>
+        <ul class="badge-list">
+          <li><span>성명</span> <span>한지연</span></li>
+          <li><span>자격 과정</span> <span>탐정사 1급 (한국NCS자격개발원)</span></li>
+          <li><span>등록 번호</span> <span>2025-002519</span></li>
+          <li><span>전문 분야</span> <span>합법적 증거수집 · 사실조사</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- 핵심 원칙 및 이미지 소개 섹션 -->
   <section id="pillars">
     <div class="container">
@@ -120,7 +161,6 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
         <h2>눈썰미 탐정사무소의 <span class="gold">핵심 강점</span></h2>
       </div>
       <div class="grid-3">
-        <!-- 1. 합법적 증거수집 -->
         <div class="feature-card">
           <img src="evidence.png" alt="합법적 증거수집">
           <div class="feature-card-content">
@@ -128,7 +168,6 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
             <p>법의 테두리 안에서 필요한 자료와 효력 있는 증거를 철저히 준비합니다.</p>
           </div>
         </div>
-        <!-- 2. 실시간 보고 -->
         <div class="feature-card">
           <img src="share.png" alt="실시간 보고 및 공유">
           <div class="feature-card-content">
@@ -136,7 +175,6 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
             <p>진행 상황을 사진과 시간 기록으로 투명하고 신속하게 공유해 드립니다.</p>
           </div>
         </div>
-        <!-- 3. 비밀보장 -->
         <div class="feature-card">
           <img src="privacy.png" alt="철저한 비밀보장">
           <div class="feature-card-content">
