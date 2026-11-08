@@ -54,12 +54,14 @@ section{padding:100px 0;position:relative}
 .hero-sub strong{color:var(--ivory);display:block;margin-top:.4rem;font-weight:500}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem}
 
-/* Cards & Services */
+/* Cards & Feature Images */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.card{background:var(--card);border:1px solid var(--line);padding:30px;transition:transform .5s var(--ease)}
-.card:hover{transform:translateY(-8px);border-color:var(--gold)}
-.card h3{font-size:1.35rem;margin-bottom:1rem;color:var(--gold-l)}
-.card p{color:var(--muted);font-size:.95rem}
+.feature-card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .5s var(--ease),border-color .3s}
+.feature-card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.feature-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.feature-card-content{padding:24px}
+.feature-card h3{font-size:1.3rem;margin-bottom:.6rem;color:var(--gold-l)}
+.feature-card p{color:var(--muted);font-size:.9rem}
 
 /* Contact Form */
 .contact{background:var(--charcoal)}
@@ -86,8 +88,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     <a href="#hero" class="logo"><span class="logo-mark"><span>眼</span></span>눈썰미 탐정사무소</a>
     <ul class="nav-links">
       <li><a href="#about">대표 탐정</a></li>
-      <li><a href="#pillars">3대 원칙</a></li>
-      <li><a href="#services">업무 안내</a></li>
+      <li><a href="#pillars">핵심 원칙</a></li>
       <li><a href="#contact">상담 문의</a></li>
     </ul>
     <a href="#contact" class="btn btn-gold">1시간 무료 상담</a>
@@ -111,22 +112,37 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- 3대 원칙 -->
+  <!-- 핵심 원칙 및 이미지 소개 섹션 -->
   <section id="pillars">
     <div class="container">
-      <h2 style="text-align: center; margin-bottom: 50px;">눈썰미 탐정사무소의 <span class="gold">3대 핵심 원칙</span></h2>
+      <div style="text-align: center; margin-bottom: 50px;">
+        <p class="eyebrow" style="justify-content: center;">Core Values</p>
+        <h2>눈썰미 탐정사무소의 <span class="gold">핵심 강점</span></h2>
+      </div>
       <div class="grid-3">
-        <div class="card">
-          <h3>01. 합법적 증거 수집</h3>
-          <p>법적 효력을 갖는 증거만을 합법적인 조사 절차를 통해 수집합니다. 소송 및 대응에 직접 활용 가능합니다.</p>
+        <!-- 1. 합법적 증거수집 -->
+        <div class="feature-card">
+          <img src="evidence.png" alt="합법적 증거수집">
+          <div class="feature-card-content">
+            <h3>합법적 증거수집</h3>
+            <p>법의 테두리 안에서 필요한 자료와 효력 있는 증거를 철저히 준비합니다.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>02. 실시간 진행 공유</h3>
-          <p>조사 과정과 진행 상황을 의뢰인에게 투명하고 빠르게 공유하여 안심하실 수 있도록 조력합니다.</p>
+        <!-- 2. 실시간 보고 -->
+        <div class="feature-card">
+          <img src="share.png" alt="실시간 보고 및 공유">
+          <div class="feature-card-content">
+            <h3>실시간 보고</h3>
+            <p>진행 상황을 사진과 시간 기록으로 투명하고 신속하게 공유해 드립니다.</p>
+          </div>
         </div>
-        <div class="card">
-          <h3>03. 철저한 비밀 보장</h3>
-          <p>의뢰인의 개인정보 및 상담 내역은 100% 비밀 보장을 원칙으로 하며, 조사 완료 후 안전하게 파기됩니다.</p>
+        <!-- 3. 비밀보장 -->
+        <div class="feature-card">
+          <img src="privacy.png" alt="철저한 비밀보장">
+          <div class="feature-card-content">
+            <h3>철저한 비밀보장</h3>
+            <p>상담 내용과 개인정보를 안전하고 엄격하게 보호하여 안심하실 수 있습니다.</p>
+          </div>
         </div>
       </div>
     </div>
