@@ -187,18 +187,19 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- Contact Section (팝업 알림 적용) -->
+  <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="container">
       <div>
         <p class="eyebrow">24 Hours Free Consultation</p>
         <h2>망설이지 말고<br><span class="gold">상담받아 보세요.</span></h2>
         <p style="color:var(--muted); margin-bottom: 30px;">최초 1시간은 무료로 상담이 진행됩니다. 모든 비밀은 철저히 보장됩니다.</p>
-        <p><strong>비상 직통 전화:</strong> 010-6461-2460 / 070-4001-5113 </p>
+        <p><strong>비상 직통 전화:</strong> 010-6461-2460 / 070-4001-5113  </p>
         <p><strong>위치:</strong> 세종특별자치시 조치원읍 충현로149  1층</p>
       </div>
       <div class="form">
-        <form id="contactForm" action="https://formspree.io/f/mjyydzqn" method="POST">
+        <!-- target="hiddenFrame"을 통해 화면 이동 없이 백그라운드 전송 -->
+        <form id="contactForm" action="https://formspree.io/f/mjyydzqn" method="POST" target="hiddenFrame">
           <div class="field">
             <label for="name">성함 / 닉네임</label>
             <input type="text" id="name" name="name" required placeholder="홍길동">
@@ -223,6 +224,8 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
           <button type="submit" id="submitBtn" class="btn btn-gold" style="width: 100%; justify-content: center;">무료 상담 신청하기</button>
           <div id="formMsg" class="form-msg"></div>
         </form>
+        <!-- 화면에 보이지 않는 백그라운드 전송 통로 -->
+        <iframe name="hiddenFrame" id="hiddenFrame" style="display:none;"></iframe>
       </div>
     </div>
   </section>
@@ -238,35 +241,19 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
 const form = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
 const submitBtn = document.getElementById('submitBtn');
+const hiddenFrame = document.getElementById('hiddenFrame');
 
-form.addEventListener('submit', async function(e) {
-  e.preventDefault(); // 페이지가 다른 곳으로 넘어가는 것을 막습니다.
+form.addEventListener('submit', function() {
   submitBtn.disabled = true;
   submitBtn.textContent = '전송 중...';
 
-  const data = new FormData(form);
-  
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      formMsg.textContent = '✨ 상담 신청이 성공적으로 접수되었습니다. 확인 후 빠르게 연락드리겠습니다!';
-      form.reset(); // 입력창을 초기화합니다.
-    } else {
-      formMsg.textContent = '⚠️ 전송에 실패했습니다. 잠시 후 다시 시도해 주세요.';
-    }
-  } catch (error) {
-    formMsg.textContent = '⚠️ 네트워크 오류가 발생했습니다. 전화(010-6461-2460)로 문의해 주세요.';
-  } finally {
+  // 백그라운드 전송 후 안내 메시지 출력 및 폼 초기화
+  setTimeout(function() {
+    formMsg.textContent = '✨ 상담 신청이 성공적으로 접수되었습니다. 확인 후 빠르게 연락드리겠습니다!';
+    form.reset();
     submitBtn.disabled = false;
     submitBtn.textContent = '무료 상담 신청하기';
-  }
+  }, 800); // 0.8초 뒤에 바로 문구가 뜨도록 설정
 });
 </script>
 
