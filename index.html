@@ -56,9 +56,9 @@ section{padding:90px 0;position:relative}
 
 /* Certifications / Licenses Section */
 .about{background:var(--charcoal)}
-.about .container{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.cert-box{background:var(--card);border:1px solid var(--line);padding:12px;border-radius:4px;text-align:center}
+.about .container{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
+.cert-grid{display:flex;justify-content:center}
+.cert-box{background:var(--card);border:1px solid var(--line);padding:12px;border-radius:4px;text-align:center;max-width:380px;width:100%}
 .cert-box img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px}
 .cert-box span{display:block;margin-top:10px;font-size:.85rem;color:var(--gold)}
 .about-text h3{font-size:1.8rem;margin-bottom:1rem;color:var(--ivory)}
@@ -76,16 +76,26 @@ section{padding:90px 0;position:relative}
 .philo-card p,.philo-card li{color:var(--muted);font-size:.92rem;margin-bottom:.6rem}
 .philo-card ul{list-style:inside;margin-top:.8rem}
 
-/* Services Section */
+/* Services Section (evidence, share, privacy 이미지 활용) */
 .services{background:var(--charcoal)}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.feature-card{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden;transition:transform .5s var(--ease),border-color .3s}
+.feature-card:hover{transform:translateY(-8px);border-color:var(--gold)}
+.feature-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.feature-card-content{padding:24px}
+.feature-card h3{font-size:1.3rem;margin-bottom:.6rem;color:var(--gold-l)}
+.feature-card p{color:var(--muted);font-size:.9rem}
+
+/* Detailed Investigation Types */
+.detailed-services{background:var(--ink)}
 .grid-services{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
 .service-card{background:var(--card);border:1px solid var(--line);padding:30px;border-radius:4px;transition:transform .3s var(--ease),border-color .3s}
 .service-card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.service-card h3{font-size:1.2rem;margin-bottom:.8rem;color:var(--gold-l);display:flex;align-items:center;gap:.5rem}
+.service-card h3{font-size:1.2rem;margin-bottom:.8rem;color:var(--gold-l)}
 .service-card p{color:var(--muted);font-size:.9rem;line-height:1.6}
 
 /* Pricing & Policies Section */
-.pricing{background:var(--ink)}
+.pricing{background:var(--charcoal)}
 .pricing-table{width:100%;border-collapse:collapse;margin:30px 0;background:var(--card);border:1px solid var(--line)}
 .pricing-table th,.pricing-table td{padding:16px;text-align:left;border-bottom:1px solid var(--line);font-size:.9rem}
 .pricing-table th{color:var(--gold);background:rgba(197,160,89,.05);font-family:var(--serif)}
@@ -100,7 +110,7 @@ section{padding:90px 0;position:relative}
 .policy-box li span:last-child{color:var(--ivory);font-weight:500}
 
 /* Contract Template Section */
-.contract-section{background:var(--charcoal);text-align:center}
+.contract-section{background:var(--ink);text-align:center}
 .contract-box{background:var(--card);border:1px solid var(--line);padding:40px;max-width:800px;margin:0 auto;border-radius:4px;text-align:left}
 .contract-box h3{font-size:1.5rem;margin-bottom:1.2rem;color:var(--gold);text-align:center}
 .contract-box p{color:var(--muted);font-size:.9rem;margin-bottom:1.5rem;line-height:1.7}
@@ -120,7 +130,7 @@ section{padding:90px 0;position:relative}
 footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;font-size:.85rem;color:var(--muted);text-align:center}
 
 @media (max-width:980px){
-  .hero .container,.about .container,.philo-grid,.policy-grid,.contact .container{grid-template-columns:1fr}
+  .hero .container,.about .container,.philo-grid,.policy-grid,.contact .container,.grid-3{grid-template-columns:1fr}
   .nav-links{display:none}
 }
 </style>
@@ -132,9 +142,9 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
   <div class="container">
     <a href="#hero" class="logo"><span class="logo-mark"><span>眼</span></span>눈썰미 탐정사무소</a>
     <ul class="nav-links">
-      <li><a href="#about">자격 및 면허</a></li>
+      <li><a href="#about">사업자 정보</a></li>
       <li><a href="#philosophy">탐정 철학</a></li>
-      <li><a href="#services">주요 업무</a></li>
+      <li><a href="#features">핵심 강점</a></li>
       <li><a href="#pricing">비용 및 정책</a></li>
       <li><a href="#contract">계약 안내</a></li>
       <li><a href="#contact">상담 문의</a></li>
@@ -160,30 +170,26 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- 자격증 및 사업자등록증 섹션 (licence.jpg 및 licence2.jpg 반영) -->
+  <!-- 사업자등록증명 섹션 (licence2.png 반영) -->
   <section class="about" id="about">
     <div class="container">
       <div class="cert-grid">
         <div class="cert-box">
-          <img src="licence.jpg" alt="탐정사 1급 자격증">
-          <span>탐정사 1급 (한국NCS자격개발원)</span>
-        </div>
-        <div class="cert-box">
-          <img src="licence2.jpg" alt="경찰무도 3단 단증">
-          <span>경찰무도 3단 (경찰무도교육원)</span>
+          <img src="licence2.png" alt="사업자등록증명">
+          <span>국세청 정식 사업자등록증명</span>
         </div>
       </div>
       <div class="about-text">
-        <p class="eyebrow">Official Certification & Business</p>
-        <h3>공인된 전문 자격과 합법 사업자 등록</h3>
-        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호합니다. 국세청 정식 사업자 등록 및 공인 자격을 갖춘 믿을 수 있는 전문 탐정사무소입니다.</p>
+        <p class="eyebrow">Official Business Registration</p>
+        <h3>합법적이고 신뢰할 수 있는 정식 사업자</h3>
+        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호합니다. 국세청 정식 등록을 마친 공신력 있는 탐정사무소입니다.</p>
         <ul class="badge-list">
           <li><span>상호명</span> <span>눈썰미 탐정사무소</span></li>
           <li><span>대표자명</span> <span>한지연</span></li>
           <li><span>사업자등록번호</span> <span>174-19-02562</span></li>
-          <li><span>탐정사 등록번호</span> <span>2025-002519 (탐정사 1급)</span></li>
-          <li><span>경찰무도 단증</span> <span>경찰청 무도가산점 인정 (3단)</span></li>
-          <li><span>사무소 소재지</span> <span>세종특별자치시 조치원읍 충현로 149 1층</span></li>
+          <li><span>업태 / 종목</span> <span>사업시설 관리, 사업지원 및 임대 서비스업 / 탐정 및 조사 서비스업</span></li>
+          <li><span>개업일자</span> <span>2026년 10월 22일</span></li>
+          <li><span>사업장 소재지</span> <span>세종특별자치시 조치원읍 충현로 149 1층</span></li>
         </ul>
       </div>
     </div>
@@ -215,12 +221,45 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- 주요 업무 섹션 -->
-  <section class="services" id="services">
+  <!-- 핵심 강점 섹션 (evidence, share, privacy 이미지 활용) -->
+  <section class="services" id="features">
     <div class="container">
       <div style="text-align: center; margin-bottom: 50px;">
-        <p class="eyebrow" style="justify-content: center;">Core Services</p>
-        <h2>눈썰미 탐정사무소의 <span class="gold">주요 조사 업무</span></h2>
+        <p class="eyebrow" style="justify-content: center;">Core Strengths</p>
+        <h2>눈썰미 탐정사무소의 <span class="gold">핵심 강점</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="feature-card">
+          <img src="evidence.png" alt="합법적 증거수집">
+          <div class="feature-card-content">
+            <h3>합법적 증거수집</h3>
+            <p>법의 테두리 안에서 필요한 자료와 효력 있는 증거를 철저히 준비합니다.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <img src="share.png" alt="실시간 보고 및 공유">
+          <div class="feature-card-content">
+            <h3>실시간 보고</h3>
+            <p>진행 상황을 투명하고 신속하게 공유하여 안심하실 수 있도록 지원합니다.</p>
+          </div>
+        </div>
+        <div class="feature-card">
+          <img src="privacy.png" alt="철저한 비밀보장">
+          <div class="feature-card-content">
+            <h3>철저한 비밀보장</h3>
+            <p>상담 내용과 개인정보를 안전하고 엄격하게 보호하여 철저히 함구합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 상세 주요 조사 업무 섹션 -->
+  <section class="detailed-services" id="services">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <p class="eyebrow" style="justify-content: center;">Investigation Fields</p>
+        <h2>전문 <span class="gold">주요 조사 업무</span></h2>
       </div>
       <div class="grid-services">
         <div class="service-card">
@@ -228,11 +267,11 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
           <p>일본 탐정 업무의 1/3을 차지하는 핵심 영역. 의뢰인의 사회활동, SNS 기록 및 대내외 평판을 면밀히 조사합니다.</p>
         </div>
         <div class="service-card">
-          <h3>02. 펫(반려동물) 조사</h3>
+          <h3>02. 펫 (반려동물) 조사</h3>
           <p>반려동물 1천만 시대, 영국의 10대 탐정 업무 중 하나인 반려동물 관련 전문 조사를 수행합니다.</p>
         </div>
         <div class="service-card">
-          <h3>03. 매국노 조사</h3>
+          <h3>03. 매국노 / 산업스파이 조사</h3>
           <p>국가 경제와 안보를 위협하는 산업스파이, 친일재산 은닉, 해외 도피 자산 등을 추적합니다.</p>
         </div>
         <div class="service-card">
