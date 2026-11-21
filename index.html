@@ -54,34 +54,18 @@ section{padding:90px 0;position:relative}
 .hero-sub strong{color:var(--ivory);display:block;margin-top:.4rem;font-weight:500}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:1rem}
 
-/* Certifications / Licenses Section (세로 하나씩 나열 및 강조 차등) */
+/* Certifications / Licenses Section (균형감 있는 동일 규격 정렬) */
 .about{background:var(--charcoal)}
-.about .container{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-.cert-stack{display:flex;flex-direction:column;gap:28px}
+.about .container{display:grid;grid-template-columns:1.25fr .95fr;gap:48px;align-items:start}
+.cert-stack{display:flex;flex-direction:column;gap:24px}
 
-.cert-item{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px;cursor:zoom-in;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s var(--ease)}
-.cert-item:hover{transform:translateY(-4px);border-color:var(--gold)}
-.cert-item img{width:100%;border-radius:2px;object-fit:cover}
+.cert-item{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:18px;cursor:zoom-in;transition:transform .3s var(--ease),border-color .3s}
+.cert-item:hover{transform:translateY(-3px);border-color:var(--gold)}
+.cert-thumb{width:100%;height:300px;background:#0e0f12;border-radius:2px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:8px}
+.cert-thumb img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:2px}
 .cert-caption{margin-top:14px}
-.cert-title{display:block;font-family:var(--serif);font-weight:600;color:var(--gold-l);margin-bottom:6px}
-.cert-desc{font-size:.88rem;color:var(--muted);line-height:1.55;margin:0}
-
-/* 1순위 강조: 탐정사 자격증 */
-.cert-item--primary{border:1.5px solid var(--gold);padding:22px;background:linear-gradient(180deg,rgba(197,160,89,.08),var(--card));box-shadow:0 14px 36px -14px rgba(197,160,89,.35)}
-.cert-item--primary img{max-height:460px;object-fit:contain;margin:0 auto;background:#0e0f12}
-.cert-item--primary .cert-title{font-size:1.18rem;color:var(--gold-l)}
-.cert-item--primary .cert-desc{color:var(--ivory);font-size:.93rem}
-
-/* 2순위 강조: 경찰무도 단증 */
-.cert-item--secondary{padding:16px}
-.cert-item--secondary img{max-height:320px;object-fit:contain;margin:0 auto;background:#0e0f12}
-.cert-item--secondary .cert-title{font-size:1rem;color:var(--gold)}
-
-/* 3순위(상대적 적은 강조): 사업자등록증명 */
-.cert-item--sub{padding:12px;border-color:rgba(197,160,89,.12);opacity:.9}
-.cert-item--sub img{max-height:220px;object-fit:contain;margin:0 auto;background:#0e0f12}
-.cert-item--sub .cert-title{font-size:.9rem;color:var(--muted)}
-.cert-item--sub .cert-desc{font-size:.82rem;color:#7e7b74}
+.cert-title{display:block;font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--gold-l);margin-bottom:6px}
+.cert-desc{font-size:.9rem;color:var(--muted);line-height:1.6;margin:0}
 
 .about-sticky{position:sticky;top:110px}
 .about-text h3{font-size:1.8rem;margin-bottom:1rem;color:var(--ivory)}
@@ -162,6 +146,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
 @media (max-width:980px){
   .hero .container,.about .container,.philo-grid,.policy-grid,.contact .container,.grid-3{grid-template-columns:1fr}
   .about-sticky{position:static}
+  .cert-thumb{height:240px}
   .nav-links{display:none}
 }
 </style>
@@ -202,44 +187,47 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- 자격증 및 인증 서류 섹션 (세로 하나씩 나열, 자격증 최대 강조 / 사업자등록증 최소 강조) -->
+  <!-- 자격증 및 인증 서류 섹션 (세로 하나씩 균형 정렬) -->
   <section class="about" id="about">
     <div class="container">
       <div class="cert-stack">
-        <!-- 1. 제일 강조: 탐정사 자격증 -->
-        <div class="cert-item cert-item--primary" onclick="openLightbox('licence.jpg', '탐정사 자격증')">
-          <img src="licence.jpg" alt="탐정사 자격증">
+        <div class="cert-item" onclick="openLightbox('licence.jpg', '탐정사 자격증')">
+          <div class="cert-thumb">
+            <img src="licence.jpg" alt="탐정사 자격증">
+          </div>
           <div class="cert-caption">
-            <span class="cert-title">★ 탐정사 자격증 (핵심 전문 자격)</span>
-            <p class="cert-desc">공인된 탐정사 자격을 바탕으로 합법적인 절차와 조사 기법에 따라 사실 확인 및 증거 수집 업무를 수행합니다.</p>
+            <span class="cert-title">탐정사 자격증</span>
+            <p class="cert-desc">탐정사 자격을 갖추어 합법적인 절차와 기준에 따라 조사 및 증거 수집 업무를 수행합니다.</p>
           </div>
         </div>
 
-        <!-- 2. 중간 강조: 경찰무도 단증 -->
-        <div class="cert-item cert-item--secondary" onclick="openLightbox('20261112_051827.jpg', '경찰무도 3단 단증')">
-          <img src="20261112_051827.jpg" alt="경찰무도 3단 단증">
+        <div class="cert-item" onclick="openLightbox('20261112_051827.jpg', '경찰무도 3단 단증')">
+          <div class="cert-thumb">
+            <img src="20261112_051827.jpg" alt="경찰무도 3단 단증">
+          </div>
           <div class="cert-caption">
-            <span class="cert-title">경찰무도 3단 단증 (NO: 3260222)</span>
-            <p class="cert-desc">사단법인 경찰무도교육원 발급 경찰무도 3단 단증으로 현장 대응력과 자기관리 역량을 갖추었습니다[cite: 1].</p>
+            <span class="cert-title">경찰무도 3단 단증</span>
+            <p class="cert-desc">사단법인 경찰무도교육원 발급 경찰무도 3단 단증(NO: 3260222)을 보유하고 있습니다[cite: 1].</p>
           </div>
         </div>
 
-        <!-- 3. 상대적으로 적은 강조: 사업자등록증명 -->
-        <div class="cert-item cert-item--sub" onclick="openLightbox('business licence.png', '사업자등록증명')">
-          <img src="business licence.png" alt="사업자등록증명">
+        <div class="cert-item" onclick="openLightbox('business licence.png', '사업자등록증명')">
+          <div class="cert-thumb">
+            <img src="business licence.png" alt="사업자등록증명">
+          </div>
           <div class="cert-caption">
-            <span class="cert-title">사업자등록증명 (참고용)</span>
-            <p class="cert-desc">눈썰미 탐정사무소 사업자등록 정보(등록번호 174-19-02562, 세종특별자치시 조치원읍 소재)[cite: 2].</p>
+            <span class="cert-title">사업자등록증명</span>
+            <p class="cert-desc">눈썰미 탐정사무소 사업자등록증명(등록번호 174-19-02562, 세종특별자치시 조치원읍 소재)입니다[cite: 2].</p>
           </div>
         </div>
       </div>
 
       <div class="about-sticky about-text">
         <p class="eyebrow">Official Credentials</p>
-        <h3>공인된 전문 자격 기반의 합법 조사</h3>
-        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호합니다. 탐정사 자격을 중심으로 현장 실무 역량과 정식 사업자 등록 체계를 갖추고 있습니다[cite: 1, 2].</p>
+        <h3>공인된 자격과 정식 사업자 등록</h3>
+        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호합니다[cite: 2]. 관련 자격과 단증, 정식 사업자 등록을 바탕으로 합법적인 조사를 진행합니다[cite: 1, 2].</p>
         <ul class="badge-list">
-          <li><span>핵심 자격</span> <span>탐정사 자격증 보유</span></li>
+          <li><span>자격 사항</span> <span>탐정사 자격증 보유</span></li>
           <li><span>무도 단증</span> <span>경찰무도 3단 (NO: 3260222)[cite: 1]</span></li>
           <li><span>상호명</span> <span>눈썰미 탐정사무소[cite: 2]</span></li>
           <li><span>대표자명</span> <span>한지연[cite: 1, 2]</span></li>
