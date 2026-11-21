@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>눈썰미 탐정사무소 | 보이지 않는 것도, 찾아냅니다 — 세종 합법 조사 전문</title>
-<meta name="description" content="눈썰미 탐정사무소. 합법적 증거수집, 인물평판, 펫조사, 공익의뢰. (※ 불륜·사람찾기 업무 불가). 세종특별자치시 조치원읍 충현로 149 1층.">
+<meta name="description" content="눈썰미 탐정사무소. 합법적 증거수집, 인물평판, 펫조사, 공익의뢰. (※ 불륜·가출 관련 의뢰 사절). 세종특별자치시 조치원읍 충현로 149 1층.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
@@ -56,13 +56,13 @@ section{padding:90px 0;position:relative}
 
 /* Certifications / Licenses Section */
 .about{background:var(--charcoal)}
-.about .container{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
-.cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.cert-box{background:var(--card);border:1px solid var(--line);padding:12px;border-radius:4px;text-align:center;cursor:zoom-in;transition:transform .3s var(--ease),border-color .3s}
+.about .container{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert-box{background:var(--card);border:1px solid var(--line);padding:10px;border-radius:4px;text-align:center;cursor:zoom-in;transition:transform .3s var(--ease),border-color .3s}
 .cert-box:hover{transform:translateY(-4px);border-color:var(--gold)}
 .cert-box img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:2px}
-.cert-box span{display:block;margin-top:10px;font-size:.85rem;color:var(--gold)}
-.cert-hint{font-size:.75rem;color:var(--muted);margin-top:4px}
+.cert-box span{display:block;margin-top:8px;font-size:.8rem;color:var(--gold)}
+.cert-hint{font-size:.7rem;color:var(--muted);margin-top:3px}
 .about-text h3{font-size:1.8rem;margin-bottom:1rem;color:var(--ivory)}
 .about-text p{color:var(--muted);margin-bottom:1.2rem;font-size:.95rem}
 .badge-list{list-style:none;margin-top:15px}
@@ -103,10 +103,6 @@ section{padding:90px 0;position:relative}
 .service-card h3{font-size:1.2rem;margin-bottom:.8rem;color:var(--gold-l)}
 .service-card p{color:var(--muted);font-size:.9rem;line-height:1.6}
 
-/* Warning Callout Box */
-.warning-box{background:rgba(217,83,79,0.12);border:1px solid rgba(217,83,79,0.4);padding:20px;border-radius:4px;margin-bottom:30px;text-align:center}
-.warning-box p{color:#ff8585;font-weight:600;font-size:1rem;margin:0}
-
 /* Pricing & Policies Section */
 .pricing{background:var(--charcoal)}
 .pricing-table{width:100%;border-collapse:collapse;margin:30px 0;background:var(--card);border:1px solid var(--line)}
@@ -131,7 +127,7 @@ section{padding:90px 0;position:relative}
 .account-box p{color:var(--ivory);margin-bottom:0;font-weight:500}
 
 /* Contact Form */
-.contact{background:var(--ink)}
+.contact{background:var(--charcoal)}
 .contact .container{display:grid;grid-template-columns:1fr 1.1fr;gap:70px}
 .form{background:var(--card);padding:40px;border:1px solid var(--line)}
 .field{margin-bottom:20px}
@@ -143,7 +139,7 @@ section{padding:90px 0;position:relative}
 footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;font-size:.85rem;color:var(--muted);text-align:center}
 
 @media (max-width:980px){
-  .hero .container,.about .container,.philo-grid,.policy-grid,.contact .container,.grid-3{grid-template-columns:1fr}
+  .hero .container,.about .container,.philo-grid,.policy-grid,.contact .container,.grid-3,.cert-grid{grid-template-columns:1fr}
   .nav-links{display:none}
 }
 </style>
@@ -184,13 +180,18 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- 인증 및 사업자등록증 섹션 (클릭 시 확대 가능) -->
+  <!-- 인증, 자격증 및 사업자등록증 섹션 (클릭 시 확대 가능) -->
   <section class="about" id="about">
     <div class="container">
       <div class="cert-grid">
+        <div class="cert-box" onclick="openLightbox('licence.jpg', '탐정사 1급 자격증')">
+          <img src="licence.jpg" alt="탐정사 자격증">
+          <span>탐정사 자격증</span>
+          <p class="cert-hint">🔍 클릭하여 크게 보기</p>
+        </div>
         <div class="cert-box" onclick="openLightbox('business licence.png', '국세청 정식 사업자등록증명')">
           <img src="business licence.png" alt="사업자등록증명">
-          <span>국세청 정식 사업자등록증명</span>
+          <span>사업자등록증명</span>
           <p class="cert-hint">🔍 클릭하여 크게 보기</p>
         </div>
         <div class="cert-box" onclick="openLightbox('20261112_051827.jpg', '경찰무도 3단 단증')">
@@ -202,11 +203,12 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
       <div class="about-text">
         <p class="eyebrow">Official Registration & Credentials</p>
         <h3>공인된 전문 자격과 합법 사업자 등록</h3>
-        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호합니다. 국세청 정식 등록 및 전문 무도 자격을 갖춘 믿을 수 있는 탐정사무소입니다.</p>
+        <p>철저한 법적 테두리 안에서 의뢰인의 권익을 보호합니다. 탐정사 자격, 국세청 정식 사업자 등록 및 전문 무도 자격을 갖춘 믿을 수 있는 탐정사무소입니다.</p>
         <ul class="badge-list">
           <li><span>상호명</span> <span>눈썰미 탐정사무소</span></li>
           <li><span>대표자명</span> <span>한지연</span></li>
           <li><span>사업자등록번호</span> <span>174-19-02562</span></li>
+          <li><span>탐정사 등록번호</span> <span>2025-002519 (탐정사 1급)</span></li>
           <li><span>경찰무도 단증</span> <span>경찰청 무도가산점 인정 (3단)</span></li>
           <li><span>사무소 소재지</span> <span>세종특별자치시 조치원읍 충현로 149 1층</span></li>
         </ul>
@@ -273,17 +275,12 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
     </div>
   </section>
 
-  <!-- 상세 주요 조사 업무 섹션 (불륜/사람찾기 불가 안내 강조) -->
+  <!-- 상세 주요 조사 업무 섹션 -->
   <section class="detailed-services" id="services">
     <div class="container">
       <div style="text-align: center; margin-bottom: 40px;">
         <p class="eyebrow" style="justify-content: center;">Investigation Fields</p>
         <h2>전문 <span class="gold">주요 조사 업무</span></h2>
-      </div>
-
-      <!-- 중요 경고 공지 박스 -->
-      <div class="warning-box">
-        <p>⚠️ 안내 말씀: 눈썰미 탐정사무소는 <strong>불륜(외도) 조사</strong> 및 <strong>사람 찾기(가출·실종 등)</strong> 의뢰는 관련 법적 규정에 따라 <strong>절대 접수 및 진행하지 않습니다.</strong></p>
       </div>
 
       <div class="grid-services">
@@ -305,7 +302,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
         </div>
         <div class="service-card" style="grid-column: 1 / -1; background: rgba(197,160,89,.04);">
           <h3>05. 민·형사 사건 증거수집 및 분석</h3>
-          <p>법적 기준에 부합하는 철저한 증거 수집 및 분석 업무를 지원합니다. <br><span style="color: #ff8585; font-size: 0.88rem; font-weight: 500;">※ 재차 강조하오니 불륜 및 사람 찾기(가출·실종 등) 관련 의뢰는 정중히 사절합니다.</span></p>
+          <p>법적 기준에 부합하는 철저한 증거 수집 및 분석 업무를 지원합니다. <br><span style="color: #ff8585; font-size: 0.88rem; font-weight: 500;">참고 : 불륜,가출,관련 의뢰는 정중히 사절합니다</span></p>
         </div>
       </div>
     </div>
@@ -324,45 +321,38 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
       <table class="pricing-table">
         <thead>
           <tr>
-            <th>조사 기간</th>
+            <th>기간</th>
             <th>총 비용</th>
-            <th>선급금 (계약금)</th>
-            <th>잔금 및 성과금 구조</th>
+            <th>선급금</th>
+            <th>비고</th>
             <th>위약금 규정</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><strong>10일 기간</strong></td>
-            <td>200만 원</td>
-            <td>200만 원</td>
-            <td>전액 선급</td>
-            <td>선급금의 100%</td>
-          </tr>
-          <tr>
-            <td><strong>30일 기간</strong></td>
-            <td>600만 원</td>
-            <td>600만 원</td>
-            <td>보고서 작성 후 성과금 협의 산정</td>
-            <td>선급금의 90%</td>
-          </tr>
-          <tr>
-            <td><strong>60일 기간</strong></td>
-            <td>1,000만 원</td>
+            <td><strong>기본</strong></td>
             <td>500만 원</td>
-            <td>보고서 작성 후 500만 원 + 성과금 협의</td>
-            <td>계약금의 80%</td>
+            <td>전액선급 500만 원</td>
+            <td>-</td>
+            <td>계약금의 위약금 100%</td>
           </tr>
           <tr>
-            <td><strong>150일 기간</strong></td>
-            <td>3,000만 원</td>
+            <td><strong>30일</strong></td>
+            <td>1,000만 원</td>
+            <td>선급금 500만 원</td>
+            <td>-</td>
+            <td>선급금 위약금 80%</td>
+          </tr>
+          <tr>
+            <td><strong>60일</strong></td>
             <td>2,000만 원</td>
-            <td>보고서 작성 후 1,000만 원 + 성과금 협의</td>
-            <td>계약금의 70%</td>
+            <td>선급금 1,000만 원</td>
+            <td>-</td>
+            <td>선급금 위약금 70%</td>
           </tr>
           <tr>
-            <td><strong>150일 초과</strong></td>
-            <td colspan="4">별도 협의 비용 산정</td>
+            <td><strong>60일 초과</strong></td>
+            <td colspan="4">별도협의</td>
           </tr>
         </tbody>
       </table>
@@ -437,7 +427,7 @@ footer{background:var(--ink);border-top:1px solid var(--line);padding:40px 0;fon
               <option>매국노 / 산업스파이 조사</option>
               <option>공익의뢰 조사 (세무/비리/갑질 등)</option>
               <option>민·형사 증거수집 및 분석</option>
-              <option>기타 문의 (※ 불륜·사람찾기 불가)</option>
+              <option>기타 문의</option>
             </select>
           </div>
           <div class="field">
